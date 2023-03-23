@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+
+    {% include 'Board/board.html.twig' with grid %}
+    {% include 'Board/currentPlayer.html.twig' with grid %}
+    {% include 'Board/controls.html.twig' %}
+
+    <div>
+        <div> Select board size: </div>
+        <a href="{{ path('setSize', {'boardSize': 3}) }}">3 X 3</a>
+        <a href="{{ path('setSize', {'boardSize': 4}) }}">4 X 4</a>
+        <a href="{{ path('setSize', {'boardSize': 5}) }}">5 X 5</a>
+    </div>
+    <div>{{boardSize}}</div>
+{% endblock body %}
